@@ -1,0 +1,56 @@
+<div class="main-content">
+  <div class="container-fluid">
+    <button type="button" class="btn btn-info" (click)="createComponent()">
+      Crear
+    </button>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-header card-header-danger">
+            <h4 class="card-title ">Residenciales</h4>
+            <p class="card-category"> Lista de residenciales </p>
+          </div>
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="table">
+                <thead class=" text-primary">
+                  <th></th>
+                  <th>
+                    Nombre
+                  </th>
+                  <th>
+                    Dirección
+                  </th>
+                  <th>
+                    Acciones
+                  </th>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let residencial of residenciales">
+                    <td>
+                      <img src="{{ residencial.imageUrl }}" alt="" class="image-in-cell">
+                    </td>
+                    <td>
+                      {{ residencial.name }}
+                    </td>
+                    <td>
+                      {{ residencial.address }}
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-info btn-sm" (click)="edit(residencial)">
+                        <i class="fas fa-edit"></i>
+                      </button>
+                      <button type="button" class="btn btn-danger btn-sm" (click)="delete(residencial)">
+                        <i class="fas fa-trash-alt"></i>
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
