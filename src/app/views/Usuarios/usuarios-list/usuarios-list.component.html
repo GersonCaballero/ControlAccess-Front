@@ -1,0 +1,132 @@
+<div class="main-content">
+    <div class="container-fluid">
+      <div  class="input-group rouded d-flex" *ngIf="showSearchField">
+        <input type="text" [(ngModel)]="searchTerm" class="form-control col-md-12 mt-2 mx-2" placeholder="Buscar...">
+        <button class="btn btn-danger btn-rounded btn-just-icon float-right mx-1" (click)="showSearch()">
+          <i class="material-icons">close</i> 
+        </button>
+      </div> 
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-header card-header-danger">
+              <button type="button" class="btn btn-info me-2 float-right" (click)="createComponent()">
+                Crear 
+                <i class="fas fa-plus fa-beat"></i>
+              </button>
+              <button class="btn btn-success btn-rounded btn-just-icon float-right mx-1" *ngIf="!showSearchField" (click)="showSearch()">
+                <i class="material-icons">search</i>      
+              </button>
+              <h4 class="card-title ">Usuarios</h4>
+              <p class="card-category"> Lista de usuarios </p>
+            </div>
+            <div class="card-body">
+              <div class="table-responsive">
+                <table class="table">
+                  <thead class=" text-primary">                
+                    <th>
+                      Nombre
+                    </th>
+                    <th>
+                      Apellido
+                    </th>                   
+                    <th>
+                        Correo electrónico
+                    </th>
+                    <th>
+                        Número celular
+                    </th>
+                    <th>
+                        Nombre usuario
+                    </th>
+                    <th>
+                        Contraseña
+                    </th>                    
+                    <th>
+                        Tipo de usuario
+                    </th>
+                    <th>
+                        Casa
+                    </th>
+                    <th>
+                        Inmueble            
+                    </th>
+                    <th>
+                        CreatedBy
+                    </th>                    
+                    <th>
+                        UpdatedDate
+                    </th>
+                    <th>
+                        UpdatedBy
+                    </th>
+                    <th>
+                        UpdatedDate
+                    </th>
+                    <th>
+                      Acciones
+                    </th>
+                  </thead>                
+                  <tbody>
+                    <tr *ngFor="let usuario of usuarios | filterUsuarios: searchTerm">
+                      <td>
+                        {{ usuario.nombre }}
+                      </td>
+                      <td>
+                        {{ usuario.apellido }}
+                      </td>
+                      <td>
+                        {{ usuario.correoElectronico }}
+                      </td>
+                      <td>
+                        {{ usuario.numeroCelular}}
+                      </td>
+                      <td>
+                        {{ usuario.nombreUsuario}}
+                      </td>
+                      <td>
+                        {{ usuario.contrasena}}
+                      </td>
+                      <td>
+                        {{ usuario.tipoUsuario.nombre }}
+                      </td>
+                      <td>
+                        {{ usuario.casas.name}}
+                      </td>
+                      <td>
+                        {{ usuario.inmuebles.name}}
+                      </td>          
+                      <td>
+                        {{ usuario.createdBy }}                        
+                      </td>
+                      <td>
+                        {{ usuario.createdDate }}
+                      </td>
+                      <td>
+                        {{ usuario.updatedBy }}
+                      </td>
+                      <td>
+                        {{ usuario.updatedDate}}
+                      </td>
+
+                      <td>
+                        <button type="button" class="btn btn-info btn-sm" (click)="edit(usuario)">
+                          <i class="fas fa-edit"></i>
+                        </button>
+                        <button type="button" class="btn btn-danger btn-sm" (click)="delete(usuario)">
+                          <i class="fas fa-trash-alt"></i>
+                        </button>
+                      </td>
+
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {{usuarios | json}}

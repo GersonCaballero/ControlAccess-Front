@@ -86,5 +86,8 @@ export class ResidencialCreateComponent implements OnInit {
         this.router.navigate(['residencials']);
       });
   }
+  cancelar () {
+    this.router.navigate(['residencials'])
+  }
 
 }

@@ -1,0 +1,100 @@
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-header card-header-danger">
+            <h4 class="card-title">{{ isEditMode ? 'Editar Casas' : 'Crear Casas' }}</h4>
+            <p class="card-category">Completar información</p>
+          </div>
+          <div class="card-body">
+            <form [formGroup]="formCasas" (ngSubmit)="save()" class="my-4">
+              <div class="row">
+                <div class="col-md-4 mb-3">
+                  <label for="name">Nombre</label>
+                  <input id="name" class="form-control" placeholder="Nombre" name="name" formControlName="name">
+                  <div class="alert text-danger mt-1 pt-1 pb-1 px-0" *ngIf="!Nombre.valid && !Nombre.pristine">
+                    El campo nombre es obligatorio.
+                  </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                  <label for="IdZona">Zonas</label>
+                  <select class="form-control" name="idZona" id="idZona" formControlName="idZona">
+                    <option class="text text-secundary" [value]="0" disabled>Seleccione una Zona</option>
+                    <option *ngFor="let zona of zonas" [value]="zona.id">{{ zona.name }}</option>
+                  </select>
+                  <div class="alert text-danger mt-1 pt-1 pb-1 px-0" *ngIf="!IdZona.valid && !IdZona.pristine">
+                    El campo Zona es obligatorio.
+                  </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                  <label for="IdBloque">Bloques</label>
+                  <select class="form-control" name="idBloque" id="idBloque" formControlName="idBloque">
+                    <option [value]="0" disabled>Seleccione un bloque</option>
+                    <option *ngFor="let bloque of bloques" [value]="bloque.id">{{ bloque.name }}</option>
+                  </select>
+                  <div class="alert text-danger mt-1 pt-1 pb-1 px-0" *ngIf="!IdBloque.valid && !IdBloque.pristine">
+                    El campo IdBloque es obligatorio.
+                  </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                  <label for="IdCalle">Calles</label>
+                  <select class="form-control" name="idCalle" id="idCalle" formControlName="idCalle">
+                    <option [value]="0" disabled>Seleccione una calle</option>
+                    <option *ngFor="let calle of calles" [value]="calle.id">{{ calle.name }}</option>
+                  </select>
+                  <div class="alert text-danger mt-1 pt-1 pb-1 px-0" *ngIf="!IdCalle.valid && !IdCalle.pristine">
+                    El campo IdCalle es obligatorio.
+                  </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                  <label for="IdAvenida">Avenidas</label>
+                  <select class="form-control" name="idAvenida" id="idAvenida" formControlName="idAvenida">
+                    <option [value]="0" disabled>Seleccione una avenida</option>
+                    <option *ngFor="let avenida of avenidas" [value]="avenida.id">{{ avenida.name }}</option>
+                  </select>
+                  <div class="alert text-danger mt-1 pt-1 pb-1 px-0" *ngIf="!IdAvenida.valid && !IdAvenida.pristine">
+                    El campo IdAvenida es obligatorio.
+                  </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                  <label for="CreatedBy">CreatedBy</label>
+                  <input id="createdBy" class="form-control" placeholder="CreatedBy" name="createdBy" formControlName="createdBy">
+                  <div class="alert text-danger mt-1 pt-1 pb-1 px-0" *ngIf="!CreatedBy.valid && !CreatedBy.pristine">
+                    El campo CreatedBy es obligatorio.
+                  </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                  <label for="CreatedDate">CreatedDate</label>
+                  <input id="createdDate" class="form-control" placeholder="CreatedDate" name="createdDate" type="datetime-local" formControlName="createdDate">
+                  <div class="alert text-danger mt-1 pt-1 pb-1 px-0" *ngIf="!CreatedDate.valid && !CreatedDate.pristine">
+                    El campo CreatedDate es obligatorio.
+                  </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                  <label for="UpdatedBy">UpdatedBy</label>
+                  <input id="updatedBy" class="form-control" placeholder="UpdatedBy" name="updatedBy" formControlName="updatedBy">
+                  <div class="alert text-danger mt-1 pt-1 pb-1 px-0" *ngIf="!UpdatedBy.valid && !UpdatedBy.pristine">
+                    El campo UpdatedBy es obligatorio.
+                  </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                  <label for="UpdatedDate">UpdatedDate</label>
+                  <input id="updatedDate" class="form-control" placeholder="UpdatedDate" name="updatedDate" type="datetime-local" formControlName="updatedDate">
+                  <div class="alert text-danger mt-1 pt-1 pb-1 px-0" *ngIf="!UpdatedDate.valid && !UpdatedDate.pristine">
+                    El campo UpdatedDate es obligatorio.
+                  </div>
+                </div>            
+              </div> 
+              <button type="submit" class="btn btn-success float-right">{{ isEditMode ? 'Actualizar' : 'Crear' }}</button>
+              <button type="button" class="btn btn-primary float-right mr-2" (click)="cancelar()">Cancelar</button>
+              <div class="clearfix"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{{ formCasas.value | json }}

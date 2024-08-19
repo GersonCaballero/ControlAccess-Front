@@ -1,0 +1,77 @@
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-header card-header-danger">
+            <h4 class="card-title">{{ isEditMode ? 'Editar Zonas' : 'Crear Zonas' }}</h4>
+            <p class="card-category">Completar información</p>
+          </div>
+          <div class="card-body">
+            <form [formGroup]="formZonas" (ngSubmit)="save()" class="my-4">
+              <div class="row">
+                <div class="col-md-4 mb-3">
+                  <label for="name">Nombre</label>
+                  <input id="name" class="form-control" placeholder="Nombre" name="name" formControlName="name">
+                  <div class="alert text-danger mt-1 pt-1 pb-1 px-0" *ngIf="!Nombre.valid && !Nombre.pristine">
+                    El campo Nombre es obligatorio.
+                  </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                  <label for="ResidencialId">ResidencialId</label>
+                  <select class="form-control" name="residencialId" id="residencialId" formControlName="residencialId">                  
+                    <option value="0" disabled>Elegir...</option>
+                    <option *ngFor="let residencial of Residencial" [value]="residencial.id">
+                      {{ residencial.name }}
+                    </option>
+                  </select>
+                  <div class="alert text-danger mt-1 pt-1 pb-1 px-0"
+                    *ngIf="!ResidencialId.valid && !ResidencialId.pristine">
+                    El campo ResidencialId es obligatorio.
+                  </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                  <label for="CreatedBy">CreatedBy</label>
+                  <input id="createdBy" class="form-control" placeholder="createdBy" name="createdBy"
+                    formControlName="createdBy">
+                  <div class="alert text-danger mt-1 pt-1 pb-1 px-0" *ngIf="!CreatedBy.valid && !CreatedBy.pristine">
+                    El campo CreatedBy es obligatorio.
+                  </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                  <label for="CreatedDate">CreatedDate</label>
+                  <input id="createdDate" class="form-control" placeholder="createdDate" name="CreatedDate"
+                    type="datetime-local" formControlName="createdDate">
+                  <div class="alert text-danger mt-1 pt-1 pb-1 px-0"
+                    *ngIf="!CreatedDate.valid && !CreatedDate.pristine">
+                    El campo CreatedDate es obligatorio.
+                  </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                  <label for="UpdatedBy">UpdatedBy</label>
+                  <input id="updatedBy" class="form-control" placeholder="UpdatedBy" name="updatedBy"
+                    formControlName="updatedBy">
+                  <div class="alert text-danger mt-1 pt-1 pb-1 px-0" *ngIf="!UpdatedBy.valid && !UpdatedBy.pristine">
+                    El campo UpdatedBy es obligatorio.
+                  </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                  <label for="UpdatedDate">UpdatedDate</label>
+                  <input id="updatedDate" class="form-control" placeholder="updatedDate" name="updatedDate"
+                    type="datetime-local" formControlName="updatedDate">
+                  <div class="alert text-danger mt-1 pt-1 pb-1 px-0"
+                    *ngIf="!UpdatedDate.valid && !UpdatedDate.pristine">
+                    El campo UpdatedDate es obligatorio.
+                  </div>
+                </div>
+              </div>
+              <button type="submit" class="btn btn-success float-right">{{ isEditMode ? 'Actualizar' : 'Crear' }}</button>
+              <button type="button" class="btn btn-primary float-right mr-2" (click)="cancelar()">Cancelar</button>
+              <div class="clearfix"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

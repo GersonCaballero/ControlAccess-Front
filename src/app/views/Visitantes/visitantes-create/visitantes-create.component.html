@@ -1,0 +1,84 @@
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-header card-header-danger">
+            <h4 class="card-title">{{ isEditMode ? 'Editar Visitante' : 'Crear Visitante' }}</h4>
+            <p class="card-category">Completar información</p>
+          </div>
+          <div class="card-body">
+            <form [formGroup]="formVisitantes" (ngSubmit)="save()" class="my-4">
+              <div class="row">
+                <div class="col-md-4 mb-3">
+                  <label for="nombre">Nombre</label>
+                  <input id="nombre" class="form-control" placeholder="Nombre" formControlName="nombre" name="nombre">
+                  <div class="alert text-danger mt-1 pt-1 pb-1 px-0" [hidden]="nombre.valid || nombre.pristine">
+                    El campo nombre es obligatorio.
+                  </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                  <label for="apellido">Apellido</label>
+                  <input id="apellido" class="form-control" placeholder="Apellido" formControlName="apellido" name="apellido">
+                  <div class="alert text-danger mt-1 pt-1 pb-1 px-0" [hidden]="apellido.valid || apellido.pristine">
+                    El campo apellido es obligatorio.
+                  </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                  <label for="numeroIdentidad">Número de Identidad</label>
+                  <input id="numeroIdentidad" class="form-control" placeholder="Número de Identidad" formControlName="numeroIdentidad" name="numeroIdentidad">
+                  <div class="alert text-danger mt-1 pt-1 pb-1 px-0" [hidden]="numeroIdentidad.valid || numeroIdentidad.pristine">
+                    El campo número de identidad es obligatorio.
+                  </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                  <label for="telefono">Teléfono</label>
+                  <input id="telefono" class="form-control" placeholder="Teléfono" formControlName="telefono" name="telefono">
+                  <div class="alert text-danger mt-1 pt-1 pb-1 px-0" [hidden]="telefono.valid || telefono.pristine">
+                    El campo teléfono es obligatorio.
+                  </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                  <label for="motivo">Motivo</label>
+                  <input id="motivo" class="form-control" placeholder="Motivo" formControlName="motivo" name="motivo">
+                  <div class="alert text-danger mt-1 pt-1 pb-1 px-0" [hidden]="motivo.valid || motivo.pristine">
+                    El campo motivo es obligatorio.
+                  </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                  <label for="observaciones">Observaciones</label>
+                  <input id="observaciones" class="form-control" placeholder="Observaciones" formControlName="observaciones" name="observaciones">
+                </div>
+                <div class="col-md-4 mb-3">
+                  <label for="createdBy">CreatedBy</label>
+                  <input id="createdBy" class="form-control" placeholder="CreatedBy" formControlName="createdBy" name="createdBy">
+                </div>
+                <div class="col-md-4 mb-3">
+                  <label for="createdDate">CreatedDate</label>
+                  <input id="createdDate" class="form-control" placeholder="CreatedDate" formControlName="createdDate" name="createdDate" type="datetime-local">
+                  <div class="alert text-danger mt-1 pt-1 pb-1 px-0" [hidden]="createdDate.valid || createdDate.pristine">
+                    El campo CreatedDate es obligatorio.
+                  </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                  <label for="updatedBy">UpdatedBy</label>
+                  <input id="updatedBy" class="form-control" placeholder="UpdatedBy" formControlName="updatedBy" name="updatedBy">
+                </div>
+                <div class="col-md-4 mb-3">
+                  <label for="updatedDate">UpdatedDate</label>
+                  <input id="updatedDate" class="form-control" placeholder="UpdatedDate" formControlName="updatedDate" name="updatedDate" type="datetime-local">
+                  <div class="alert text-danger mt-1 pt-1 pb-1 px-0" [hidden]="updatedDate.valid || updatedDate.pristine">
+                    El campo UpdatedDate es obligatorio.
+                  </div>
+                </div>
+              </div>
+              <button type="submit" class="btn btn-success float-right">{{ isEditMode ? 'Actualizar' : 'Crear'}}</button>
+              <button class="btn btn-primary float-right" (click)="Cancelar()">Cancelar</button>
+              <div class="clearfix"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

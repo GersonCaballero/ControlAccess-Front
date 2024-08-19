@@ -1,0 +1,88 @@
+<div class="main-content">
+    <div class="container-fluid">
+      <div  class="input-group rouded d-flex" *ngIf="showSearchField">
+        <input type="text" [(ngModel)]="searchTerm" class="form-control col-md-12 mt-2 mx-2" placeholder="Buscar...">
+        <button class="btn btn-danger btn-rounded btn-just-icon float-right mx-1" (click)="showSearch()">
+          <i class="material-icons">close</i> 
+        </button>
+      </div> 
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-header card-header-danger">
+              <button type="button" class="btn btn-info me-2 float-right" (click)="createComponent()">
+                Crear 
+                <i class="fas fa-plus fa-beat"></i>
+              </button>
+              <button class="btn btn-success btn-rounded btn-just-icon float-right mx-1" *ngIf="!showSearchField" (click)="showSearch()">
+                <i class="material-icons">search</i>      
+              </button>
+              <h4 class="card-title ">Tarifas</h4>
+              <p class="card-category"> Lista de tarifas </p>
+            </div>
+            <div class="card-body">
+              <div class="table-responsive">
+                <table class="table">
+                  <thead class=" text-primary">                
+                    <th>
+                        Inmuebles
+                    </th>
+                    <th>
+                        Monto
+                    </th>                    
+                    <th>
+                        CreatedBy
+                    </th>
+                    <th>
+                        CreatedDate
+                    </th>
+                    <th>
+                        UpdatedBy
+                    </th>
+                    <th>
+                        UpdatedDate
+                    </th>
+                    <th>
+                      Acciones
+                    </th>
+                  </thead>                
+                  <tbody>
+                    <tr *ngFor="let tarifa of tarifas | filterTarifas: searchTerm">
+                      <td>
+                        {{ tarifa.inmuebles.name }}
+                      </td>                
+                      <td>
+                        {{ tarifa.monto }}
+                      </td>
+                      <td>                        
+                        {{ tarifa.createdBy }}                        
+                      </td>
+                      <td>
+                        {{ tarifa.createdDate }}
+                      </td>
+                      <td>
+                        {{ tarifa.updatedBy }}
+                      </td>
+                      <td>
+                        {{ tarifa.updatedDate}}
+                      </td>
+
+                      <td>
+                        <button type="button" class="btn btn-info btn-sm" (click)="edit(tarifa)">
+                          <i class="fas fa-edit"></i>
+                        </button>
+                        <button type="button" class="btn btn-danger btn-sm" (click)="delete(tarifa)">
+                          <i class="fas fa-trash-alt"></i>
+                        </button>
+                      </td>
+
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

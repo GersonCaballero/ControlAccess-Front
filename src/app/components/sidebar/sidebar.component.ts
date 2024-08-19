@@ -7,16 +7,21 @@ declare interface RouteInfo {
     icon: string;
     class: string;
 }
-export const ROUTES: RouteInfo[] = [
-    { path: '/dashboard', title: 'Dashboard',  icon: 'dashboard', class: '' },
-    { path: '/user-profile', title: 'User Profile',  icon:'person', class: '' },
-    { path: '/table-list', title: 'Table List',  icon:'content_paste', class: '' },
-    { path: '/typography', title: 'Typography',  icon:'library_books', class: '' },
-    { path: '/icons', title: 'Icons',  icon:'bubble_chart', class: '' },
-    { path: '/maps', title: 'Maps',  icon:'location_on', class: '' },
-    { path: '/notifications', title: 'Notifications',  icon:'notifications', class: '' },
-    { path: '/upgrade', title: 'Upgrade to PRO',  icon:'unarchive', class: 'active-pro' },
+export const ROUTES: RouteInfo[] = [   
     { path: '/residencials', title: 'Residenciales',  icon:'home', class: '' },
+    { path: '/avenidas', title: 'Avenidas',  icon:'home', class: '' },
+    { path: '/bloques', title: 'Bloques',  icon:'home', class: '' },
+    { path: '/calles', title: 'Calles',  icon:'home', class: '' },
+    { path: '/zonas', title: 'Zonas',  icon:'home', class: '' },
+    { path: '/casas', title: 'Casas',  icon:'home', class: '' },
+    { path: '/inmuebles', title: 'Inmuebles',  icon:'home', class: '' },
+    { path: '/tarifas', title: 'Tarifas',  icon:'home', class: '' },
+    { path: '/tipousuarios', title: 'Tipo de usuario',  icon:'home', class: '' },
+    { path: '/usuarios', title: 'Usuarios',  icon:'home', class: '' },
+    { path: '/visitantes', title: 'Visitantes',  icon:'home', class: '' },
+    { path: '/reportes', title: 'Reportes',  icon:'home', class: '' },
+    // { path: '/upgrade', title: 'Upgrade to PRO',  icon:'unarchive', class: 'active-pro' },
+    
 ];
 
 @Component({

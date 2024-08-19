@@ -1,0 +1,72 @@
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-header card-header-danger">
+            <h4 class="card-title">{{ isEditMode ? 'Editar Tipo de Usuario' : 'Crear Tipo de Usuario' }}</h4>
+            <p class="card-category">Completar información</p>
+          </div>
+          <div class="card-body">
+            <form [formGroup]="formTipoUsuario" (ngSubmit)="save()" class="my-4">
+              <div class="row">
+                <div class="col-md-4 mb-3">
+                  <label for="nombre">Nombre</label>
+                  <input id="nombre" class="form-control" placeholder="Nombre" formControlName="nombre">
+                  <div class="alert text-danger mt-1 pt-1 pb-1 px-0"
+                    *ngIf="nombre.invalid && (nombre.dirty || nombre.touched)">
+                    El campo Nombre es obligatorio.
+                  </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                  <label for="identifier">Identificación</label>
+                  <input id="identifier" class="form-control" placeholder="Identificación" formControlName="identifier">
+                  <div class="alert text-danger mt-1 pt-1 pb-1 px-0"
+                    *ngIf="identifier.invalid && (identifier.dirty || identifier.touched)">
+                    El campo Identificación es obligatorio.
+                  </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                  <label for="createdBy">CreatedBy</label>
+                  <input id="createdBy" class="form-control" placeholder="CreatedBy" formControlName="createdBy">
+                  <div class="alert text-danger mt-1 pt-1 pb-1 px-0"
+                    *ngIf="createdBy.invalid && (createdBy.dirty || createdBy.touched)">
+                    El campo CreatedBy es obligatorio.
+                  </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                  <label for="createdDate">CreatedDate</label>
+                  <input id="createdDate" class="form-control" placeholder="CreatedDate" type="datetime-local" formControlName="createdDate">
+                  <div class="alert text-danger mt-1 pt-1 pb-1 px-0"
+                    *ngIf="createdDate.invalid && (createdDate.dirty || createdDate.touched)">
+                    El campo CreatedDate es obligatorio.
+                  </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                  <label for="updatedBy">UpdatedBy</label>
+                  <input id="updatedBy" class="form-control" placeholder="UpdatedBy" formControlName="updatedBy">
+                  <div class="alert text-danger mt-1 pt-1 pb-1 px-0"
+                    *ngIf="updatedBy.invalid && (updatedBy.dirty || updatedBy.touched)">
+                    El campo UpdatedBy es obligatorio.
+                  </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                  <label for="updatedDate">UpdatedDate</label>
+                  <input id="updatedDate" class="form-control" placeholder="UpdatedDate" type="datetime-local" formControlName="updatedDate">
+                  <div class="alert text-danger mt-1 pt-1 pb-1 px-0"
+                    *ngIf="updatedDate.invalid && (updatedDate.dirty || updatedDate.touched)">
+                    El campo UpdatedDate es obligatorio.
+                  </div>
+                </div>
+              </div>
+
+              <button type="submit" class="btn btn-success float-right">{{ isEditMode ? 'Actualizar' : 'Crear' }}</button>
+              <button type="button" class="btn btn-primary float-right mr-2" (click)="cancelar()">Cancelar</button>
+              <div class="clearfix"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
