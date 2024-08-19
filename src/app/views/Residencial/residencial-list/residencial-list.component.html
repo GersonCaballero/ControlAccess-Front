@@ -1,29 +1,42 @@
 <div class="main-content">
   <div class="container-fluid">
-    <button type="button" class="btn btn-info" (click)="createComponent()">
-      Crear
-    </button>
-    <div class="row">
+    <div *ngIf="showSearchField" class="input-group rouded d-flex">
+      <input type="text" [(ngModel)]="searchText" (input)="residencialFilter()" class="form-control col-md-12 mt-2 mx-2" placeholder="Buscar...">
+      <button class="btn btn-danger btn-rounded btn-just-icon float-right mx-1" (click)="showSearch()">
+        <i class="material-icons">close</i> 
+      </button>
+    </div>
+
+    <div class="row mt-4">
       <div class="col-md-12">
         <div class="card">
           <div class="card-header card-header-danger">
-            <h4 class="card-title ">Residenciales</h4>
-            <p class="card-category"> Lista de residenciales </p>
+            <button type="button" class="btn btn-info me-2 float-right" (click)="createComponent()">
+              Crear 
+              <i class="fas fa-plus fa-beat"></i>
+            </button>
+            <button class="btn btn-success btn-rounded btn-just-icon float-right mx-1" *ngIf="!showSearchField" (click)="showSearch()">
+              <i class="material-icons">search</i>      
+            </button>
+            <h4 class="card-title">Residenciales</h4>
+            <p class="card-category">Lista de residenciales</p>
           </div>
           <div class="card-body">
             <div class="table-responsive">
               <table class="table">
-                <thead class=" text-primary">
-                  <th></th>
-                  <th>
-                    Nombre
-                  </th>
-                  <th>
-                    Dirección
-                  </th>
-                  <th>
-                    Acciones
-                  </th>
+                <thead class="text-primary">
+                  <tr>
+                    <th>
+                      Imagen                     
+                    </th>
+                    <th>
+                      Nombre 
+                    </th>
+                    <th>
+                      Dirección                     
+                    </th>
+                    <th>Acciones</th>
+                  </tr>
                 </thead>
                 <tbody>
                   <tr *ngFor="let residencial of residenciales">
@@ -38,10 +51,10 @@
                     </td>
                     <td>
                       <button type="button" class="btn btn-info btn-sm" (click)="edit(residencial)">
-                        <i class="fas fa-edit"></i>
+                        <i class="fas fa-edit fa-beat"></i>
                       </button>
-                      <button type="button" class="btn btn-danger btn-sm" (click)="delete(residencial)">
-                        <i class="fas fa-trash-alt"></i>
+                      <button type="button" class="btn btn-danger btn-sm" (click)="openModalDelete(residencial)">
+                        <i class="fas fa-trash-alt fa-beat"></i>
                       </button>
                     </td>
                   </tr>

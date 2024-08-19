@@ -1,0 +1,66 @@
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="input-group rounded d-flex" *ngIf="showSearchField">
+      <input type="text" [(ngModel)]="searchTerm" class="form-control col-md-12 mt-2 mx-2" placeholder="Buscar...">
+      <button class="btn btn-danger btn-rounded btn-just-icon float-right mx-1" (click)="showSearch()">
+        <i class="material-icons">close</i>
+      </button>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-header card-header-danger">
+            <button type="button" class="btn btn-info me-2 float-right" (click)="createReporte()">
+              Crear 
+              <i class="fas fa-plus fa-beat"></i>
+            </button>
+            <button class="btn btn-success btn-rounded btn-just-icon float-right mx-1" *ngIf="!showSearchField" (click)="showSearch()">
+              <i class="material-icons">search</i>
+            </button>
+            <h4 class="card-title">Lista de Reportes</h4>
+            <p class="card-category">Aquí puede ver y gestionar los reportes</p>
+          </div>
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="table">
+                <thead class="text-primary">
+                  <tr>                  
+                    <th>Tipo de Reporte</th>
+                    <th>Fecha y Hora de Generación</th>
+                    <th>Contenido</th>
+                    <th>Usuario</th>
+                    <th>CreatedBy</th>
+                    <th>CreatedDate</th>
+                    <th>UpdatedBy</th>
+                    <th>UpdatedDate</th>
+                    <th>Acciones</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let reporte of reportes | filterReportes: searchTerm">                    
+                    <td>{{ reporte.tipoReporte }}</td>
+                    <td>{{ reporte.fechaHoraGeneracion }}</td>
+                    <td>{{ reporte.contenido }}</td>
+                    <td>{{ reporte.usuario.nombre }}</td>
+                    <td>{{ reporte.createdBy }}</td>
+                    <td>{{ reporte.createdDate }}</td>
+                    <td>{{ reporte.updatedBy }}</td>
+                    <td>{{ reporte.updatedDate }}</td>
+                    <td>
+                      <button class="btn btn-info btn-sm" (click)="edit(reporte)">
+                        <i class="fas fa-edit"></i>
+                      </button>
+                      <button class="btn btn-danger btn-sm" (click)="delete(reporte)">
+                        <i class="fas fa-trash-alt"></i>
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

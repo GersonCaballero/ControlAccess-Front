@@ -12,8 +12,10 @@ declare var $: any;
 export class ResidencialListComponent implements OnInit {
 
   residenciales: Residencial[] = [];
+  searchText: string = '';
   residencialSeleccionado: Residencial | null = null;
   mostrarModal: boolean = false;
+  showSearchField: boolean = false;
 
   constructor(private residencialService: ResidencialService, private router: Router) { }
 
@@ -23,10 +25,12 @@ export class ResidencialListComponent implements OnInit {
 
   getResidenciales(): void {
     this.residencialService.getResidencials()
-      .subscribe((data: Residencial[]) => { 
-        this.residenciales = data 
+      .subscribe((data: Residencial[]) => {
+        this.residenciales = data;
       });
   }
+
+
 
   createComponent(): void {
     this.router.navigate(['residencials/create']);
@@ -39,22 +43,33 @@ export class ResidencialListComponent implements OnInit {
   delete(residencial: Residencial): void {
     if (residencial) {
       this.residencialService.deleteByIdResidencial(residencial.id)
-        .subscribe((data: any) => {
-          console.log('Residencial eliminado:', residencial);
+        .subscribe(() => {
           this.getResidenciales();
           $.notify({
             icon: "Eliminar",
-            message: `El registro ${residencial.name} fue eliminado con exito.`
-    
-        },{
+            message: `El registro ${residencial.name} fue eliminado con éxito.`
+          }, {
             type: 'danger',
             timer: 4000,
             placement: {
-                from: "bottom",
-                align: "right"
+              from: "bottom",
+              align: "right"
             }
+          });
         });
-        });
+    }
+  }
+
+  
+  residencialFilter(): void {
+    if (this.searchText.trim() === '') {
+      this.getResidenciales();
+    } else {
+      const term = this.searchText.toLowerCase();
+      this.residenciales = this.residenciales.filter(residencial =>
+        residencial.name.toLowerCase().includes(term) ||
+        residencial.address.toLowerCase().includes(term)
+      );    
     }
   }
 
@@ -66,4 +81,13 @@ export class ResidencialListComponent implements OnInit {
   closeModalDelete(): void {
     this.residencialSeleccionado = null;
   }
+
+  showSearch(): void {
+    this.showSearchField = !this.showSearchField;
+    if (!this.showSearchField) {
+      this.searchText = ''; 
+      this.residencialFilter();
+    }
+  }
+  
 }

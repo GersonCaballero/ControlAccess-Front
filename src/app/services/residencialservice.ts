@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Residencial } from 'app/models/Residencial';
-
 @Injectable({
   providedIn: 'root'
 })

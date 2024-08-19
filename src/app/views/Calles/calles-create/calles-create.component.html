@@ -1,0 +1,61 @@
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-header card-header-danger">
+            <h4 class="card-title">{{ isEditMode ? "Editar calle" : "Crear calle" }}</h4>
+            <p class="card-category">Completar información</p>
+          </div>
+          <div class="card-body">
+            <form [formGroup]="formCalles" (ngSubmit)="save()" class="my-4">
+              <div class="row">
+                <div class="col-md-4 mb-3">
+                  <label for="companyInput">Nombre</label>
+                  <input id="name" class="form-control" placeholder="Nombre" formControlName="name" name="name">
+                  <div class="alert text-danger mt-1 pt-1 pb-1 px-0" *ngIf="!Nombre.valid && !Nombre.pristine">
+                    El campo nombre es obligatorio.
+                  </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                  <label for="ResidencialId">Residencial</label>
+                  <select class="form-control" id="residencialId" formControlName="residencialId" name="residencialId">  
+                    <option [value]="0" disabled selected>Elegir..</option>                
+                    <option *ngFor="let residencial of Residencial" [value]="residencial.id">                  
+                      {{ residencial.name }}
+                    </option>
+                  </select>
+                  <div class="alert text-danger mt-1 pt-1 pb-1 px-0" *ngIf="!ResidencialId.valid && !ResidencialId.pristine">
+                    El campo Residencial es obligatorio.
+                  </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                  <label for="companyInput">CreatedBy</label>
+                  <input id="createdBy" class="form-control" placeholder="createdBy" formControlName="createdBy"
+                    name="CreatedBy">
+                  <div class="alert text-danger mt-1 pt-1 pb-1 px-0" *ngIf="!CreatedBy.valid && !CreatedBy.pristine">
+                    El campo CreatedBy es obligatorio.
+                  </div>
+                </div>             
+                <div class="col-md-4 mb-3">
+                  <label for="companyInput">UpdatedBy</label>
+                  <input id="updatedBy" class="form-control" placeholder="updatedBy" formControlName="updatedBy"
+                    name="updatedBy">
+                  <div class="alert text-danger mt-1 pt-1 pb-1 px-0" *ngIf="!UpdatedBy.valid && !UpdatedBy.pristine">
+                    El campo updatedDate es obligatorio.
+                  </div>
+                </div>
+
+              </div>
+
+              <button type="submit" class="btn btn-success float-right">{{ isEditMode ? 'Actualizar' :
+                'Crear' }}</button>
+              <button class="btn btn-primary float-right" (click)="cancelar()">Cancelar</button>
+              <div class="clearfix"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

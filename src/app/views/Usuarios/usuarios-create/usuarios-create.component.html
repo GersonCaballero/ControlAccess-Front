@@ -1,0 +1,138 @@
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-header card-header-danger">
+            <h4 class="card-title">{{ isEditMode ? 'Editar Usuario' : 'Crear Usuario' }}</h4>
+            <p class="card-category">Completar información</p>
+          </div>
+          <div class="card-body">
+            <form [formGroup]="formUsuarios" (ngSubmit)="save()" class="my-4">
+              <div class="row">
+                <div class="col-md-4 mb-3">
+                  <label for="nombre">Nombre</label>
+                  <input id="nombre" class="form-control" placeholder="Nombre" formControlName="nombre">
+                  <div class="alert text-danger mt-1 pt-1 pb-1 px-0" *ngIf="nombre.invalid && !nombre.pristine">
+                    El campo Nombre es obligatorio.
+                  </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                  <label for="apellido">Apellido</label>
+                  <input id="apellido" class="form-control" placeholder="Apellido" formControlName="apellido">
+                  <div class="alert text-danger mt-1 pt-1 pb-1 px-0" *ngIf="apellido.invalid && !apellido.pristine">
+                    El campo Apellido es obligatorio.
+                  </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                  <label for="correoElectronico">Correo</label>
+                  <input id="correoElectronico" class="form-control" placeholder="Correo Electrónico"
+                    formControlName="correoElectronico">
+                  <div class="alert text-danger mt-1 pt-1 pb-1 px-0" *ngIf="correoElectronico.invalid && !correoElectronico.pristine">
+                    El campo Correo Electrónico es obligatorio.                    
+                  </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                  <label for="numeroCelular">Número Celular</label>
+                  <input id="numeroCelular" class="form-control" placeholder="Número Celular"
+                    formControlName="numeroCelular">
+                  <div class="alert text-danger mt-1 pt-1 pb-1 px-0"
+                    *ngIf="numeroCelular.invalid && !numeroCelular.pristine">
+                    El campo Número Celular es obligatorio.
+                  </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                  <label for="nombreUsuario">Nombre Usuario</label>
+                  <input id="nombreUsuario" class="form-control" placeholder="Nombre Usuario"
+                    formControlName="nombreUsuario">
+                  <div class="alert text-danger mt-1 pt-1 pb-1 px-0"
+                    *ngIf="nombreUsuario.invalid && !nombreUsuario.pristine">
+                    El campo Nombre Usuario es obligatorio.
+                  </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                  <label for="contrasena">Contraseña</label>
+                  <input id="contrasena" class="form-control" placeholder="Contraseña" formControlName="contrasena">
+                  <div class="alert text-danger mt-1 pt-1 pb-1 px-0" *ngIf="contrasena.invalid && !contrasena.pristine">
+                    El campo Contraseña es obligatorio.
+                  </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                  <label for="idTipoDeUsuario">Tipo Usuario</label>
+                  <select class="form-control" name="idTipoDeUsuario" id="idTipoDeUsuario"
+                    formControlName="idTipoDeUsuario">
+                    <option [value]="0" disabled>Seleccionar Tipo Usuario</option>
+                    <option *ngFor="let tipoUsuario of tiposUsuarios" [value]="tipoUsuario.id">{{ tipoUsuario.nombre }}
+                    </option>
+                  </select>
+                  <div class="alert text-danger mt-1 pt-1 pb-1 px-0"
+                    *ngIf="idTipoDeUsuario.invalid && !idTipoDeUsuario.pristine">
+                    El campo Identificación Tipo Usuario es obligatorio.
+                  </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                  <label for="idCasa">Casa</label>
+                  <select class="form-control" name="idCasa" id="idCasa" formControlName="idCasa">
+                    <option [value]="0" disabled>Seleccionar Casa</option>
+                    <option *ngFor="let casa of casas" [value]="casa.id">{{ casa.name }}</option>
+                  </select>
+                  <div class="alert text-danger mt-1 pt-1 pb-1 px-0" *ngIf="idCasa.invalid && idCasa.pristine">
+                    El campo Identificación Casa es obligatorio.
+                  </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                  <label for="idInmueble">Inmueble</label>
+                  <select class="form-control" name="idInmueble" id="idInmueble" formControlName="idInmueble">
+                    <option [value]="0" disabled>Seleccionar Inmueble</option>
+                    <option *ngFor="let inmueble of inmuebles" [value]="inmueble.id">{{ inmueble.name }}</option>
+                  </select>
+                  <div class="alert text-danger mt-1 pt-1 pb-1 px-0" *ngIf="idInmueble.invalid && !idInmueble.pristine">
+                    El campo Identificación Inmueble es obligatorio.
+                  </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                  <label for="createdBy">Creado Por</label>
+                  <input id="createdBy" class="form-control" placeholder="Creado Por" formControlName="createdBy">
+                  <div class="alert text-danger mt-1 pt-1 pb-1 px-0" *ngIf="createdBy.invalid && !createdBy.pristine">
+                    El campo Creado Por es obligatorio.
+                  </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                  <label for="createdDate">Fecha de Creación</label>
+                  <input id="createdDate" class="form-control" placeholder="Fecha de Creación" type="datetime-local"
+                    formControlName="createdDate">
+                  <div class="alert text-danger mt-1 pt-1 pb-1 px-0" *ngIf="createdDate.invalid && !createdDate.pristine">
+                    El campo Fecha de Creación es obligatorio.
+                  </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                  <label for="updatedBy">Actualizado Por</label>
+                  <input id="updatedBy" class="form-control" placeholder="Actualizado Por" formControlName="updatedBy">
+                  <div class="alert text-danger mt-1 pt-1 pb-1 px-0" *ngIf="updatedBy.invalid && !updatedBy.pristine">
+                    El campo Actualizado Por es obligatorio.
+                  </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                  <label for="updatedDate">Fecha de Actualización</label>
+                  <input id="updatedDate" class="form-control" placeholder="Fecha de Actualización"
+                    type="datetime-local" formControlName="updatedDate">
+                  <div class="alert text-danger mt-1 pt-1 pb-1 px-0" *ngIf="updatedDate.invalid && !updatedDate.pristine">
+                    El campo Fecha de Actualización es obligatorio.
+                  </div>
+                </div>
+              </div>
+
+              <button type="submit" class="btn btn-success float-right" [disabled]="formUsuarios.invalid">
+                {{ isEditMode ? 'Actualizar' : 'Crear' }}
+              </button>
+              <button type="button" class="btn btn-primary float-right mr-2" (click)="cancelar()">Cancelar</button>
+              <div class="clearfix"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{{ formUsuarios.value | json }}
