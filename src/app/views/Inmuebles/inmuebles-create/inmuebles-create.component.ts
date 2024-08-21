@@ -23,10 +23,7 @@ export class InmueblesCreateComponent implements OnInit {
     this.formInmuebles = this.fb.group({
       id: [0],
       name: ['', Validators.required],
-      createdBy: ['', Validators.required],
-      createdDate: ['', Validators.required],
-      updatedBy: ['', Validators.required],
-      updatedDate: ['', Validators.required]
+      createdBy: ['', Validators.required]
     });
   }
 

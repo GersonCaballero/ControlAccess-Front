@@ -24,30 +24,6 @@
                     El campo CreatedBy es obligatorio.
                   </div>
                 </div>
-                <div class="col-md-4 mb-3">
-                  <label for="CreatedDate">CreatedDate</label>
-                  <input id="createdDate" class="form-control" placeholder="CreatedDate"
-                    name="createdDate" type="datetime-local" name="createdDate" formControlName="createdDate">
-                  <div class="alert text-danger mt-1 pt-1 pb-1 px-0"
-                    *ngIf="!CreatedDate.valid && !CreatedDate.pristine">
-                    El campo CreatedDate es obligatorio.
-                  </div>
-                </div>
-                <div class="col-md-4 mb-3">
-                  <label for="UpdatedBy">UpdatedBy</label>
-                  <input id="updatedBy" class="form-control" placeholder="UpdatedBy" name="updatedBy" formControlName="updatedBy">
-                  <div class="alert text-danger mt-1 pt-1 pb-1 px-0" *ngIf="!UpdatedBy.valid && !UpdatedBy.pristine">
-                    El campo UpdatedBy es obligatorio.
-                  </div>
-                </div>
-                <div class="col-md-4 mb-3">
-                  <label for="UpdatedDate">UpdatedDate</label>
-                  <input id="updatedDate" class="form-control" placeholder="UpdatedDate" name="updatedDate" type="datetime-local" formControlName="updatedDate">
-                  <div class="alert text-danger mt-1 pt-1 pb-1 px-0"
-                    *ngIf="!UpdatedDate.valid && !UpdatedDate.pristine">
-                    El campo UpdatedDate es obligatorio.
-                  </div>
-                </div>
               </div>
 
               <button type="submit" class="btn btn-success float-right">{{ isEditMode ? 'Actualizar' : 'Crear'
@@ -61,5 +37,3 @@
     </div>
   </div>
 </div>
-
-{{ formInmuebles | json }}

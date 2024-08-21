@@ -29,10 +29,7 @@ export class VisitantesCreateComponent implements OnInit {
       telefono: ['', Validators.required],
       motivo: ['', Validators.required],
       observaciones: [''],
-      createdBy: [''],
-      createdDate: ['', Validators.required],
-      updatedBy: [''],
-      updatedDate: ['', Validators.required],
+      createdBy: ['']
     });
   }
 

@@ -32,6 +32,12 @@ import { VisitantesListComponent } from 'app/views/Visitantes/visitantes-list/vi
 import { VisitantesCreateComponent } from 'app/views/Visitantes/visitantes-create/visitantes-create.component';
 import { ReportesListComponent } from 'app/views/Reportes/reportes-list/reportes-list.component';
 import { ReportesCreateComponent } from 'app/views/Reportes/reportes-create/reportes-create.component';
+import { IncidenciasListComponent } from 'app/views/Incidencias/incidencias-list/incidencias-list.component';
+import { IncidenciasCreateComponent } from 'app/views/Incidencias/incidencias-create/incidencias-create.component';
+import { VehiculosListComponent } from 'app/views/Vehiculos/vehiculos-list/vehiculos-list.component';
+import { VehiculosCreateComponent } from 'app/views/Vehiculos/vehiculos-create/vehiculos-create.component';
+import { AccesosListComponent } from 'app/views/Accesos/accesos-list/accesos-list.component';
+import { AccesosCreateComponent } from 'app/views/Accesos/accesos-create/accesos-create.component';
 
 
 export const AdminLayoutRoutes: Routes = [
@@ -111,7 +117,7 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'tarifas/edit/:id',         component: TarifasCreateComponent},
     { path: 'tipousuarios',             component: TipoUsuarioListComponent},
     { path: 'tipousuarios/create',      component: TipoUsuarioCreateComponent},
-    { path: 'tipousuarios/edit/:id',    component: TarifasCreateComponent},
+    { path: 'tipousuarios/edit/:id',    component: TipoUsuarioCreateComponent},
     { path: 'usuarios',                 component: UsuariosListComponent},
     { path: 'usuarios/create',          component: UsuariosCreateComponent},
     { path: 'usuarios/edit/:id',        component: UsuariosCreateComponent},
@@ -121,4 +127,14 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'reportes',                 component: ReportesListComponent},
     { path: 'reportes/create',          component: ReportesCreateComponent},
     { path: 'reportes/edit/:id',        component: ReportesCreateComponent},
+    { path: 'incidencias',              component: IncidenciasListComponent},
+    { path: 'incidencias/create',       component: IncidenciasCreateComponent},
+    { path: 'incidencias/edit/:id' ,    component: IncidenciasCreateComponent},
+    { path: 'vehiculos',                component: VehiculosListComponent},
+    { path: 'vehiculos/create',         component: VehiculosCreateComponent},
+    { path: 'vehiculos/edit/:id' ,      component: VehiculosCreateComponent},
+    { path: 'accesos',                  component: AccesosListComponent },
+    { path: 'accesos/create',           component: AccesosCreateComponent },
+    {path: 'accesos/edit/:id',          component: AccesosCreateComponent}
+
 ];

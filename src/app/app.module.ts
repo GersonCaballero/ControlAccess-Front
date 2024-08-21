@@ -42,6 +42,14 @@ import { FilterVisitantesPipe } from './views/search/Pipe/filter-visitantes.pipe
 import { ReportesCreateComponent } from './views/Reportes/reportes-create/reportes-create.component';
 import { ReportesListComponent } from './views/Reportes/reportes-list/reportes-list.component';
 import { FilterReportesPipe } from './views/search/Pipe/filter-reportes.pipe';
+import { IncidenciasCreateComponent } from './views/Incidencias/incidencias-create/incidencias-create.component';
+import { IncidenciasListComponent } from './views/Incidencias/incidencias-list/incidencias-list.component';
+import { FilterIncidenciasPipe } from './views/search/Pipe/filter-incidencias.pipe';
+import { VehiculosCreateComponent } from './views/Vehiculos/vehiculos-create/vehiculos-create.component';
+import { VehiculosListComponent } from './views/Vehiculos/vehiculos-list/vehiculos-list.component';
+import { AccesosCreateComponent } from './views/Accesos/accesos-create/accesos-create.component';
+import { AccesosListComponent } from './views/Accesos/accesos-list/accesos-list.component';
+import { FilterAccesosPipe } from './views/search/Pipe/filter-accesos.pipe';
 
 @NgModule({
   imports: [
@@ -86,11 +94,19 @@ import { FilterReportesPipe } from './views/search/Pipe/filter-reportes.pipe';
     FilterTipoUsuarioPipe,
     FilterVisitantesPipe,
     FilterUsuariosPipe,
+    FilterIncidenciasPipe,
     VisitantesCreateComponent,
     VisitantesListComponent,
     ReportesCreateComponent,
     ReportesListComponent,
-    FilterReportesPipe
+    FilterReportesPipe,
+    IncidenciasCreateComponent,
+    IncidenciasListComponent,
+    VehiculosCreateComponent,
+    VehiculosListComponent,
+    AccesosCreateComponent,
+    AccesosListComponent,
+    FilterAccesosPipe
   ],
   providers: [],
   bootstrap: [AppComponent]

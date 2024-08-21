@@ -11,8 +11,7 @@ export class FilterCalllesPipe implements PipeTransform {
     }
     return calles.filter(calle =>
       calle.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      calle.createdBy.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      calle.updatedBy.toLowerCase().includes(searchTerm.toLowerCase()) 
+      calle.createdBy.toLowerCase().includes(searchTerm.toLowerCase())
     );
   }
 }

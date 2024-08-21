@@ -11,9 +11,7 @@ export class FilterReportesPipe implements PipeTransform {
     }
     return reportes.filter(reporte =>
       reporte.tipoReporte.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      reporte.contenido.toLowerCase().includes(searchTerm.toLowerCase()) ||      
-      reporte.createdBy.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      reporte.updatedBy.toLowerCase().includes(searchTerm.toLowerCase()) 
+      reporte.contenido.toLowerCase().includes(searchTerm.toLowerCase())
     );
   }
 }

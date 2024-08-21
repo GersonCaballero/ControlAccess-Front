@@ -9,8 +9,5 @@ export interface Usuarios {
     idTipoDeUsuario: number,
     idCasa: number,
     idInmueble: number,
-    createdBy: string,
-    createdDate: Date | string,
-    updatedBy: string,
-    updatedDate: Date | string
+    createdBy: string
 }

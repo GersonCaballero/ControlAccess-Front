@@ -34,30 +34,6 @@
                     El campo CreatedBy es obligatorio.
                   </div>
                 </div>
-                <div class="col-md-4 mb-3">
-                  <label for="createdDate">CreatedDate</label>
-                  <input id="createdDate" class="form-control" placeholder="CreatedDate" type="datetime-local" formControlName="createdDate">
-                  <div class="alert text-danger mt-1 pt-1 pb-1 px-0"
-                    *ngIf="createdDate.invalid && (createdDate.dirty || createdDate.touched)">
-                    El campo CreatedDate es obligatorio.
-                  </div>
-                </div>
-                <div class="col-md-4 mb-3">
-                  <label for="updatedBy">UpdatedBy</label>
-                  <input id="updatedBy" class="form-control" placeholder="UpdatedBy" formControlName="updatedBy">
-                  <div class="alert text-danger mt-1 pt-1 pb-1 px-0"
-                    *ngIf="updatedBy.invalid && (updatedBy.dirty || updatedBy.touched)">
-                    El campo UpdatedBy es obligatorio.
-                  </div>
-                </div>
-                <div class="col-md-4 mb-3">
-                  <label for="updatedDate">UpdatedDate</label>
-                  <input id="updatedDate" class="form-control" placeholder="UpdatedDate" type="datetime-local" formControlName="updatedDate">
-                  <div class="alert text-danger mt-1 pt-1 pb-1 px-0"
-                    *ngIf="updatedDate.invalid && (updatedDate.dirty || updatedDate.touched)">
-                    El campo UpdatedDate es obligatorio.
-                  </div>
-                </div>
               </div>
 
               <button type="submit" class="btn btn-success float-right">{{ isEditMode ? 'Actualizar' : 'Crear' }}</button>

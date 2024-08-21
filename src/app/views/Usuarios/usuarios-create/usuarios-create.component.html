@@ -97,29 +97,6 @@
                     El campo Creado Por es obligatorio.
                   </div>
                 </div>
-                <div class="col-md-4 mb-3">
-                  <label for="createdDate">Fecha de Creación</label>
-                  <input id="createdDate" class="form-control" placeholder="Fecha de Creación" type="datetime-local"
-                    formControlName="createdDate">
-                  <div class="alert text-danger mt-1 pt-1 pb-1 px-0" *ngIf="createdDate.invalid && !createdDate.pristine">
-                    El campo Fecha de Creación es obligatorio.
-                  </div>
-                </div>
-                <div class="col-md-4 mb-3">
-                  <label for="updatedBy">Actualizado Por</label>
-                  <input id="updatedBy" class="form-control" placeholder="Actualizado Por" formControlName="updatedBy">
-                  <div class="alert text-danger mt-1 pt-1 pb-1 px-0" *ngIf="updatedBy.invalid && !updatedBy.pristine">
-                    El campo Actualizado Por es obligatorio.
-                  </div>
-                </div>
-                <div class="col-md-4 mb-3">
-                  <label for="updatedDate">Fecha de Actualización</label>
-                  <input id="updatedDate" class="form-control" placeholder="Fecha de Actualización"
-                    type="datetime-local" formControlName="updatedDate">
-                  <div class="alert text-danger mt-1 pt-1 pb-1 px-0" *ngIf="updatedDate.invalid && !updatedDate.pristine">
-                    El campo Fecha de Actualización es obligatorio.
-                  </div>
-                </div>
               </div>
 
               <button type="submit" class="btn btn-success float-right" [disabled]="formUsuarios.invalid">

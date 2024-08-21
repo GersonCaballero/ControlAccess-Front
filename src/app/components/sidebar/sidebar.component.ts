@@ -20,6 +20,9 @@ export const ROUTES: RouteInfo[] = [
     { path: '/usuarios', title: 'Usuarios',  icon:'home', class: '' },
     { path: '/visitantes', title: 'Visitantes',  icon:'home', class: '' },
     { path: '/reportes', title: 'Reportes',  icon:'home', class: '' },
+    { path: '/incidencias', title: 'Incidencias',  icon:'home', class: '' },
+    { path: '/vehiculos', title: 'Vehiculos',  icon:'home', class: '' },
+    { path: '/accesos', title: 'Accesos', icon: 'home', class: ''},
     // { path: '/upgrade', title: 'Upgrade to PRO',  icon:'unarchive', class: 'active-pro' },
     
 ];

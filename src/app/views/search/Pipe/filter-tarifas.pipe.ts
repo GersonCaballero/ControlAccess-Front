@@ -10,9 +10,7 @@ export class FilterTarifasPipe implements PipeTransform {
       return tarifas;
     }
     return tarifas.filter(tarifa =>  
-      tarifa.inmuebles.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      tarifa.createdBy.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      tarifa.updatedBy.toLowerCase().includes(searchTerm.toLowerCase())
+      tarifa.inmuebles.name.toLowerCase().includes(searchTerm.toLowerCase())
     );
   }
 }

@@ -38,32 +38,6 @@
                     El campo CreatedBy es obligatorio.
                   </div>
                 </div>
-                <div class="col-md-4 mb-3">
-                  <label for="CreatedDate">CreatedDate</label>
-                  <input id="createdDate" class="form-control" placeholder="createdDate" name="CreatedDate"
-                    type="datetime-local" formControlName="createdDate">
-                  <div class="alert text-danger mt-1 pt-1 pb-1 px-0"
-                    *ngIf="!CreatedDate.valid && !CreatedDate.pristine">
-                    El campo CreatedDate es obligatorio.
-                  </div>
-                </div>
-                <div class="col-md-4 mb-3">
-                  <label for="UpdatedBy">UpdatedBy</label>
-                  <input id="updatedBy" class="form-control" placeholder="UpdatedBy" name="updatedBy"
-                    formControlName="updatedBy">
-                  <div class="alert text-danger mt-1 pt-1 pb-1 px-0" *ngIf="!UpdatedBy.valid && !UpdatedBy.pristine">
-                    El campo UpdatedBy es obligatorio.
-                  </div>
-                </div>
-                <div class="col-md-4 mb-3">
-                  <label for="UpdatedDate">UpdatedDate</label>
-                  <input id="updatedDate" class="form-control" placeholder="updatedDate" name="updatedDate"
-                    type="datetime-local" formControlName="updatedDate">
-                  <div class="alert text-danger mt-1 pt-1 pb-1 px-0"
-                    *ngIf="!UpdatedDate.valid && !UpdatedDate.pristine">
-                    El campo UpdatedDate es obligatorio.
-                  </div>
-                </div>
               </div>
               <button type="submit" class="btn btn-success float-right">{{ isEditMode ? 'Actualizar' : 'Crear' }}</button>
               <button type="button" class="btn btn-primary float-right mr-2" (click)="cancelar()">Cancelar</button>

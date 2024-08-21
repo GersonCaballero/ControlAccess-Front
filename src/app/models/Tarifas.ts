@@ -5,8 +5,5 @@ export interface Tarifas {
     idTipoInmuebles: number,
     inmuebles?: Inmuebles,
     monto: number,
-    createdBy: string,
-    createdDate: Date,
-    updatedBy: string,
-    updatedDate: Date,
+    createdBy: string
 }

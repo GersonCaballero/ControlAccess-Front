@@ -11,9 +11,7 @@ export class FilterTipoUsuarioPipe implements PipeTransform {
     }
     return tipoUsuarios.filter(tipoUsuario =>
       tipoUsuario.nombre.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      tipoUsuario.identifier.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      tipoUsuario.createdBy.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      tipoUsuario.updatedBy.toLowerCase().includes(searchTerm.toLowerCase())
+      tipoUsuario.identifier.toLowerCase().includes(searchTerm.toLowerCase())
     );
   }
 } 

@@ -29,8 +29,7 @@ export class CallesCreateComponent implements OnInit {
       id: [0],
       name: ['', Validators.required],
       residencialId: [0, Validators.required],
-      createdBy: ['', Validators.required],   
-      updatedBy: ['', Validators.required],      
+      createdBy: ['', Validators.required],              
     });
   }  
 

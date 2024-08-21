@@ -44,10 +44,7 @@ export class UsuariosCreateComponent implements OnInit {
       idTipoDeUsuario: [0, Validators.required],
       idCasa: [0, Validators.required],
       idInmueble: [0, Validators.required],
-      createdBy: ['', Validators.required],
-      createdDate: [Date.now(), Validators.required],
-      updatedBy: ['', Validators.required],
-      updatedDate: [Date.now(), Validators.required]
+      createdBy: ['', Validators.required]
     });
   }
 

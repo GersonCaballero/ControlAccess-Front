@@ -29,10 +29,6 @@
                     <th>Fecha y Hora de Generación</th>
                     <th>Contenido</th>
                     <th>Usuario</th>
-                    <th>CreatedBy</th>
-                    <th>CreatedDate</th>
-                    <th>UpdatedBy</th>
-                    <th>UpdatedDate</th>
                     <th>Acciones</th>
                   </tr>
                 </thead>
@@ -42,10 +38,6 @@
                     <td>{{ reporte.fechaHoraGeneracion }}</td>
                     <td>{{ reporte.contenido }}</td>
                     <td>{{ reporte.usuario.nombre }}</td>
-                    <td>{{ reporte.createdBy }}</td>
-                    <td>{{ reporte.createdDate }}</td>
-                    <td>{{ reporte.updatedBy }}</td>
-                    <td>{{ reporte.updatedDate }}</td>
                     <td>
                       <button class="btn btn-info btn-sm" (click)="edit(reporte)">
                         <i class="fas fa-edit"></i>

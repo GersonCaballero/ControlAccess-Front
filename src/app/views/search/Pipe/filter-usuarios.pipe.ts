@@ -13,9 +13,7 @@ export class FilterUsuariosPipe implements PipeTransform {
       usuario.nombre.toLowerCase().includes(searchTerm.toLowerCase()) ||
       usuario.correoElectronico.toLowerCase().includes(searchTerm.toLowerCase()) ||
       usuario.numeroCelular.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      usuario.nombreUsuario.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      usuario.createdBy.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      usuario.updatedBy.toLowerCase().includes(searchTerm.toLowerCase())
+      usuario.nombreUsuario.toLowerCase().includes(searchTerm.toLowerCase())
     );
   }
 }

@@ -10,9 +10,7 @@ export class FilterInmueblesPipe implements PipeTransform {
       return inmuebles;
     }
     return inmuebles.filter(inmueble =>
-      inmueble.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      inmueble.createdBy.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      inmueble.updatedBy.toLowerCase().includes(searchTerm.toLowerCase())
+      inmueble.name.toLowerCase().includes(searchTerm.toLowerCase())
     );
   }
 }

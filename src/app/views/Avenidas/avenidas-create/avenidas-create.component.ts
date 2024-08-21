@@ -30,9 +30,7 @@ export class AvenidasCreateComponent implements OnInit {
       id: [0],
       name: ['', Validators.required],
       residencialId: [0, Validators.required],  
-      createdBy: [''],      
-      updatedBy: [''],
-      updatedDate: [''],
+      createdBy: ['']    
     });
   }
 
@@ -122,16 +120,5 @@ export class AvenidasCreateComponent implements OnInit {
   get createdBy() {
     return this.formAvenidas.get('createdBy') as FormControl;
   }
-  get createdDate() {
-    return this.formAvenidas.get('createdDate') as FormControl;
-  }
-
-  get updatedBy() {
-    return this.formAvenidas.get('updatedBy') as FormControl;
-  }
-  get updatedDate() {
-    return this.formAvenidas.get('updatedDate') as FormControl;
-  }
-
 
   }

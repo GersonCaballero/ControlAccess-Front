@@ -30,10 +30,7 @@ export class TarifasCreateComponent implements OnInit {
       id: [0],
       idTipoInmueble: [0],
       monto: [0.00, Validators.required],      
-      createdBy: ['', Validators.required],
-      createdDate: [Date.now(), Validators.required],
-      updatedBy: ['', Validators.required],
-      updatedDate: [Date.now(), Validators.required]
+      createdBy: ['', Validators.required]
     })
 
   }

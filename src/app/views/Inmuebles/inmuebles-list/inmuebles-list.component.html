@@ -28,18 +28,6 @@
                       Nombre
                     </th>                
                     <th>
-                        CreatedBy
-                    </th>
-                    <th>
-                        CreatedDate
-                    </th>
-                    <th>
-                        UpdatedBy
-                    </th>
-                    <th>
-                        UpdatedDate
-                    </th>
-                    <th>
                       Acciones
                     </th>
                   </thead>                
@@ -48,19 +36,6 @@
                       <td>
                         {{ inmueble.name }}
                       </td>                     
-                      <td>
-                        {{ inmueble.createdBy }}                        
-                      </td>
-                      <td>
-                        {{ inmueble.createdDate }}
-                      </td>
-                      <td>
-                        {{ inmueble.updatedBy }}
-                      </td>
-                      <td>
-                        {{ inmueble.updatedDate}}
-                      </td>
-
                       <td>
                         <button type="button" class="btn btn-info btn-sm" (click)="edit(inmueble)">
                           <i class="fas fa-edit"></i>

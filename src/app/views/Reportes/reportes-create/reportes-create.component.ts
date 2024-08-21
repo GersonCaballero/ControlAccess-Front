@@ -32,10 +32,7 @@ export class ReportesCreateComponent implements OnInit {
       fechaHoraGeneracion: ['', Validators.required],
       contenido: ['', Validators.required],
       usuarioId: [0, Validators.required],
-      createdBy: ['', Validators.required],
-      createdDate: ['', Validators.required],
-      updatedBy: ['', Validators.required],
-      updatedDate: ['', Validators.required],
+      createdBy: ['', Validators.required]
     });
   }
 

@@ -15,9 +15,7 @@ export class FilterVisitantesPipe implements PipeTransform {
       visitante.numeroIdentidad.toLowerCase().includes(searchTerm.toLowerCase()) ||
       visitante.telefono.toLowerCase().includes(searchTerm.toLowerCase()) ||
       visitante.motivo.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      visitante.observaciones.toLowerCase().includes(searchTerm.toLowerCase()) ||    
-      visitante.createdBy.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      visitante.updatedBy.toLowerCase().includes(searchTerm.toLowerCase()) 
+      visitante.observaciones.toLowerCase().includes(searchTerm.toLowerCase())
     );
   }
 }

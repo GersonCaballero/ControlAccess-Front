@@ -25,10 +25,7 @@ export class TipoUsuarioCreateComponent implements OnInit {
       id: [0],
       nombre: ['', Validators.required],
       identifier: ['', Validators.required],
-      createdBy: ['', Validators.required],
-      createdDate: [null, Validators.required],
-      updatedBy: ['', Validators.required],
-      updatedDate: [null, Validators.required]
+      createdBy: ['', Validators.required]
     });
   }
 
@@ -108,15 +105,4 @@ export class TipoUsuarioCreateComponent implements OnInit {
     return this.formTipoUsuario.get('createdBy');
   }
 
-  get createdDate() {
-    return this.formTipoUsuario.get('createdDate');
-  }
-
-  get updatedBy() {
-    return this.formTipoUsuario.get('updatedBy');
-  }
-
-  get updatedDate() {
-    return this.formTipoUsuario.get('updatedDate');
-  }
 }

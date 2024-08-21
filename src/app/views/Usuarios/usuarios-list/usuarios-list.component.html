@@ -52,18 +52,6 @@
                         Inmueble            
                     </th>
                     <th>
-                        CreatedBy
-                    </th>                    
-                    <th>
-                        UpdatedDate
-                    </th>
-                    <th>
-                        UpdatedBy
-                    </th>
-                    <th>
-                        UpdatedDate
-                    </th>
-                    <th>
                       Acciones
                     </th>
                   </thead>                
@@ -97,19 +85,6 @@
                         {{ usuario.inmuebles.name}}
                       </td>          
                       <td>
-                        {{ usuario.createdBy }}                        
-                      </td>
-                      <td>
-                        {{ usuario.createdDate }}
-                      </td>
-                      <td>
-                        {{ usuario.updatedBy }}
-                      </td>
-                      <td>
-                        {{ usuario.updatedDate}}
-                      </td>
-
-                      <td>
                         <button type="button" class="btn btn-info btn-sm" (click)="edit(usuario)">
                           <i class="fas fa-edit"></i>
                         </button>
@@ -128,5 +103,3 @@
       </div>
     </div>
   </div>
-
-  {{usuarios | json}}

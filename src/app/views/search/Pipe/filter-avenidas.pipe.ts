@@ -10,9 +10,7 @@ export class FilterAvenidasPipe implements PipeTransform {
       return avenidas;
     }
     return avenidas.filter(avenida =>
-      avenida.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      avenida.createdBy.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      avenida.updatedBy.toLowerCase().includes(searchTerm.toLowerCase()) 
+      avenida.name.toLowerCase().includes(searchTerm.toLowerCase())  
     );
   }
 }

@@ -10,9 +10,7 @@ export class FilterZonaPipe implements PipeTransform {
       return zonas;
     }
     return zonas.filter(zona =>
-      zona.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      zona.createdBy.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      zona.updatedBy.toLowerCase().includes(searchTerm.toLowerCase())
+      zona.name.toLowerCase().includes(searchTerm.toLowerCase())
     );
   }
 }

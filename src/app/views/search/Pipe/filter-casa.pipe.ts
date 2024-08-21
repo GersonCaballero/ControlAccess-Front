@@ -10,9 +10,7 @@ export class FilterCasasPipe implements PipeTransform {
       return casas;
     }
     return casas.filter(casa =>
-      casa.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      casa.createdBy.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      casa.updatedBy.toLowerCase().includes(searchTerm.toLowerCase())
+      casa.name.toLowerCase().includes(searchTerm.toLowerCase())
     );
   }
 }

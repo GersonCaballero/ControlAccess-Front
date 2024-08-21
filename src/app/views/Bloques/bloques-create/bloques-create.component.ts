@@ -29,10 +29,7 @@ export class BloquesCreateComponent implements OnInit {
       id: [0],
       name: ['', Validators.required],
       residencialId: [0, Validators.required],  
-      createdBy: [''],
-      createdDate: ['', Validators.required],
-      updatedBy: [''],
-      updatedDate: ['', Validators.required]
+      createdBy: ['']
     });
   }
 

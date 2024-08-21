@@ -6,7 +6,4 @@ export interface Casas {
     idCalle: number,
     idAvenida: number,
     createdBy: string,
-    createdDate: Date | string,
-    updatedBy: string,
-    updatedDate: Date | string
 }

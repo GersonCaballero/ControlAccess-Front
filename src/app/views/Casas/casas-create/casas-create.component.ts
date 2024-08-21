@@ -44,10 +44,7 @@ export class CasasCreateComponent implements OnInit {
       idBloque: [0, Validators.required],
       idCalle: [0, Validators.required],
       idAvenida: [0, Validators.required],
-      createdBy: ['', Validators.required],
-      createdDate: ['', Validators.required],
-      updatedBy: ['', Validators.required],
-      updatedDate: ['', Validators.required]
+      createdBy: ['', Validators.required]
     });
       
   }

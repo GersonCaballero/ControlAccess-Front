@@ -1,0 +1,73 @@
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-header card-header-danger">
+            <h4 class="card-title">{{ isEditMode ? "Editar calle" : "Crear calle" }}</h4>
+            <p class="card-category">Completar información</p>
+          </div>
+          <div class="card-body">
+            <form [formGroup]="formVehiculos" (ngSubmit)="save()" class="my-4">
+              <div class="row">
+                <div class="col-md-4 mb-3">
+                  <label for="companyInput">Placa</label>
+                  <input id="placa" class="form-control" placeholder="Placa" formControlName="placa" name="placa">
+                  <div class="alert text-danger mt-1 pt-1 pb-1 px-0" *ngIf="!placa.valid && !placa.pristine">
+                    El campo Placa es obligatorio.
+                  </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                  <label for="companyInput">Marca</label>
+                  <input id="marca" class="form-control" placeholder="Marca" formControlName="marca" name="marca">
+                  <div class="alert text-danger mt-1 pt-1 pb-1 px-0" *ngIf="!marca.valid && !marca.pristine">
+                    El campo Marca es obligatorio.
+                  </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                  <label for="companyInput">Modelo</label>
+                  <input id="modelo" class="form-control" placeholder="Modelo" formControlName="modelo" name="modelo">
+                  <div class="alert text-danger mt-1 pt-1 pb-1 px-0" *ngIf="!modelo.valid && !modelo.pristine">
+                    El campo Modelo es obligatorio.
+                  </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                  <label for="companyInput">Color</label>
+                  <input id="color" class="form-control" placeholder="color" formControlName="color" name="color">
+                  <div class="alert text-danger mt-1 pt-1 pb-1 px-0" *ngIf="!color.valid && !color.pristine">
+                    El campo Color es obligatorio.
+                  </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                  <label for="usuarioId">Usuario</label>
+                  <select class="form-control" id="usuarioId" formControlName="usuarioId" name="usuarioId">  
+                    <option [value]="0" disabled selected>Elegir..</option>                
+                    <option *ngFor="let usuario of usuarios" [value]="usuario.id">                  
+                      {{ usuario.nombre }}
+                    </option>
+                  </select>
+                  <div class="alert text-danger mt-1 pt-1 pb-1 px-0" *ngIf="!usuarioId.valid && !usuarioId.pristine">
+                    El campo usuario es obligatorio.
+                  </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                  <label for="companyInput">CreatedBy</label>
+                  <input id="createdBy" class="form-control" placeholder="createdBy" formControlName="createdBy"
+                    name="CreatedBy">
+                  <div class="alert text-danger mt-1 pt-1 pb-1 px-0" *ngIf="!createdBy.valid && !createdBy.pristine">
+                    El campo CreatedBy es obligatorio.
+                  </div>
+                </div>                            
+              </div>
+
+              <button type="submit" class="btn btn-success float-right">{{ isEditMode ? 'Actualizar' :
+                'Crear' }}</button>
+              <button class="btn btn-primary float-right" (click)="cancelar()">Cancelar</button>
+              <div class="clearfix"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
